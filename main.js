@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Cerámicas Amarte. Todos los derechos reservados.
+// Licenciado bajo licencia privativa. Ver archivo LICENSE para detalles.
+
 /* ─────────────────────────────────────────────
    BASE DE DATOS DE PRODUCTOS
    Array con todos los productos del catálogo.
@@ -13,11 +16,11 @@ const PRODUCTS = [
     priceStr: '$145.000',
     category: 'platos',
     badge: 'destacado', badgeText: 'Destacado',
-    image: 'https://picsum.photos/seed/plato-viboral/600/600',
+    image: 'assets/plato-viboral-1.png',
     description: 'Elaborada con arcilla local de Antioquia y pintada a mano con pigmento azul cobalto de El Carmen de Viboral. Cada pieza es única.',
     specs: { 'Dimensiones': '32cm diámetro x 3cm altura', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.9', reviews: 18,
-    images: ['https://picsum.photos/seed/plato-viboral/600/600','https://picsum.photos/seed/plato-viboral-d1/600/600','https://picsum.photos/seed/plato-viboral-d2/600/600']
+    images: ['assets/plato-viboral-1.png','assets/plato-viboral-2.png','assets/plato-viboral-3.png']
   },
   {
     id: 2,
@@ -25,11 +28,11 @@ const PRODUCTS = [
     subtitle: 'Exterior sin acristalar / Interior acristalado',
     price: 68000, priceStr: '$68.000',
     category: 'bowls', badge: 'best', badgeText: 'Best Seller',
-    image: 'https://picsum.photos/seed/bowl-madre/600/600',
+    image: 'assets/bowl-madre-tierra-1.png',
     description: 'Modelado a mano con arcilla local. El contraste entre el exterior rústico y el interior cristalizado es seña de identidad de nuestra artesanía.',
     specs: { 'Dimensiones': '18cm diámetro x 10cm altura', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Interior cristalino, Exterior natural', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '5.0', reviews: 34,
-    images: ['https://picsum.photos/seed/bowl-madre/600/600','https://picsum.photos/seed/bowl-madre-2/600/600','https://picsum.photos/seed/bowl-madre-3/600/600']
+    images: ['assets/bowl-madre-tierra-1.png','assets/bowl-madre-tierra-2.png','assets/bowl-madre-tierra-3.png']
   },
   {
     id: 3,
@@ -37,11 +40,11 @@ const PRODUCTS = [
     subtitle: 'Pieza única pintada a mano',
     price: 82000, priceStr: '$82.000',
     category: 'decorativo', badge: null,
-    image: 'https://picsum.photos/seed/jarron-aura/600/600',
+    image: 'assets/jarron-aura-1.png',
     description: 'Formas orgánicas con motivos vegetales pintados con pigmentos minerales propios de nuestra región.',
     specs: { 'Dimensiones': '12cm diámetro x 26cm altura', 'Material': 'Gres de Alta Cocción', 'Barniz': 'Esmalte mineral mate', 'Cuidado': 'Solo decorativo' },
     chips: ['Hecho a mano', 'Pieza única'], rating: '4.8', reviews: 12,
-    images: ['https://picsum.photos/seed/jarron-aura/600/600','https://picsum.photos/seed/jarron-aura-2/600/600','https://picsum.photos/seed/jarron-aura-3/600/600']
+    images: ['assets/jarron-aura-1.png','assets/jarron-aura-2.png','assets/jarron-aura-3.png']
   },
   {
     id: 4,
@@ -49,7 +52,7 @@ const PRODUCTS = [
     subtitle: 'Juego de 2 tazas y platillos — Serie contemporánea',
     price: 45000, priceStr: '$45.000',
     category: 'platos', badge: null,
-    image: 'https://picsum.photos/seed/set-espresso/600/600',
+    image: 'assets/set-tradicion-1.png',
     description: 'El ritual del café en una pieza de arte. Dos tazas y platillos con motivos florales minimalistas.',
     specs: { 'Dimensiones': 'Taza 7cm Ø x 6cm / Platillo 14cm Ø', 'Material': 'Porcelana artesanal', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.7', reviews: 27,
@@ -61,11 +64,11 @@ const PRODUCTS = [
     subtitle: 'Serie contemporánea',
     price: 54000, priceStr: '$54.000',
     category: 'platos', badge: null,
-    image: 'https://picsum.photos/seed/plato-punto/600/600',
+    image: 'assets/plato-punto-arcilla-1.png',
     description: 'Patrón geométrico inspirado en el arte óptico, reinterpretado con pigmentos minerales centenarios de nuestro taller.',
     specs: { 'Dimensiones': '27cm diámetro x 2.5cm altura', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Apto para microondas' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.9', reviews: 9,
-    images: ['https://picsum.photos/seed/plato-punto/600/600','https://picsum.photos/seed/plato-punto-2/600/600','https://picsum.photos/seed/plato-punto-3/600/600']
+    images: ['assets/plato-punto-arcilla-1.png','assets/plato-punto-arcilla-2.png','assets/plato-punto-arcilla-3.png']
   },
   {
     id: 6,
@@ -73,11 +76,11 @@ const PRODUCTS = [
     subtitle: 'Gres de alta cocción',
     price: 95000, priceStr: '$95.000',
     category: 'decorativo', badge: null,
-    image: 'https://picsum.photos/seed/jarra-floral/600/600',
+    image: 'assets/jarra-floral-antigua-1.png',
     description: 'Inspirada en las jarras del s. XVIII del Oriente Antioqueño. Horneada a más de 1200°C.',
     specs: { 'Dimensiones': '15cm diámetro x 30cm altura', 'Material': 'Gres de Alta Cocción', 'Barniz': 'Esmalte con craquelé', 'Cuidado': 'Solo decorativo' },
     chips: ['Hecho a mano', 'Horneado completado'], rating: '5.0', reviews: 6,
-    images: ['https://picsum.photos/seed/jarra-floral/600/600','https://picsum.photos/seed/jarra-floral-2/600/600','https://picsum.photos/seed/jarra-floral-3/600/600']
+    images: ['assets/jarra-floral-antigua-1.png','assets/jarra-floral-antigua-2.png','assets/jarra-floral-antigua-3.png']
   },
   {
     id: 7,
@@ -85,11 +88,11 @@ const PRODUCTS = [
     subtitle: 'Diseño de mango ergonómico',
     price: 28000, priceStr: '$28.000',
     category: 'bowls', badge: 'nuevo', badgeText: 'Nuevo',
-    image: 'https://picsum.photos/seed/taza-matutina/600/600',
+    image: 'assets/taza-matutina-1.png',
     description: 'La compañera perfecta para cada mañana. Asa ergonómica, pintada con nuestro icónico azul cobalto sobre base crema.',
     specs: { 'Dimensiones': '9cm diámetro x 9cm — 350ml', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Sin Plomo, apto para alimentos', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.8', reviews: 41,
-    images: ['https://picsum.photos/seed/taza-matutina/600/600','https://picsum.photos/seed/taza-matutina-2/600/600','https://picsum.photos/seed/taza-matutina-3/600/600']
+    images: ['assets/taza-matutina-1.png','assets/taza-matutina-2.png','assets/taza-matutina-3.png']
   },
   {
     id: 8,
@@ -97,15 +100,16 @@ const PRODUCTS = [
     subtitle: 'Colección Tradicional — Edición clásica',
     price: 58000, priceStr: '$58.000',
     category: 'bowls', badge: null,
-    image: 'https://picsum.photos/seed/flor-de-lis/600/600',
+    image: 'assets/flor-lis-bowl-1.png',
     description: 'El icónico diseño "Flor de Lis", sello distintivo de la tradición de El Carmen de Viboral. Pigmentos minerales aplicados a mano.',
     specs: { 'Dimensiones': '15cm diámetro x 8cm altura', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.9', reviews: 24,
-    images: ['https://picsum.photos/seed/flor-de-lis/600/600','https://picsum.photos/seed/flor-de-lis-2/600/600','https://picsum.photos/seed/flor-de-lis-3/600/600']
+    images: ['assets/flor-lis-bowl-1.png','assets/flor-lis-bowl-2.png','assets/flor-lis-bowl-3.png']
   }
 ];
 
 const WHATSAPP_NUMBER = '573128597397';
+const CART_STORAGE_KEY = 'ceramicas-amarte-cart';
 
 /* ─────────────────────────────────────────────
    ESTADO DEL CARRITO
@@ -113,6 +117,37 @@ const WHATSAPP_NUMBER = '573128597397';
    Clave: id del producto, Valor: { product, qty }
 ───────────────────────────────────────────── */
 let cart = {};
+
+function loadCartFromStorage() {
+  try {
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      cart = {};
+      for (const [productId, item] of Object.entries(parsed)) {
+        const product = PRODUCTS.find(p => p.id === parseInt(productId));
+        if (product) {
+          cart[productId] = { product, qty: item.qty };
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Error loading cart from localStorage:', e);
+    cart = {};
+  }
+}
+
+function saveCartToStorage() {
+  try {
+    const storable = {};
+    for (const [productId, item] of Object.entries(cart)) {
+      storable[productId] = { qty: item.qty };
+    }
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(storable));
+  } catch (e) {
+    console.warn('Error saving cart to localStorage:', e);
+  }
+}
 
 /* ══════════════════════════════════════════════
    SCRIPT 1 — formatPrice(num)
@@ -175,6 +210,7 @@ function addToCart(productId) {
     cart[productId] = { product, qty: 1 };
   }
 
+  saveCartToStorage();
   updateCartBadge();
   renderCartItems();
   showToast('Añadido al carrito ✓');
@@ -187,6 +223,7 @@ function addToCart(productId) {
 ══════════════════════════════════════════════ */
 function removeFromCart(productId) {
   delete cart[productId];
+  saveCartToStorage();
   updateCartBadge();
   renderCartItems();
 }
@@ -202,6 +239,7 @@ function changeQty(productId, delta) {
   if (cart[productId].qty <= 0) {
     removeFromCart(productId);
   } else {
+    saveCartToStorage();
     updateCartBadge();
     renderCartItems();
   }
@@ -352,7 +390,16 @@ function renderCatalog(filter) {
     </article>
   `).join('');
 
-  initReveal();
+  // Solo observa los elementos recién creados dentro del grid
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
 
 /* ══════════════════════════════════════════════
@@ -503,18 +550,16 @@ function jqInitMobileMenu() {
   const $burger = $('.nav-hamburger');
   const $menu   = $('.nav-mobile');
 
-  // Toggle del menú al hacer click en el hamburger
   $burger.on('click', function () {
     $(this).toggleClass('open');
-    $menu.slideToggle(280).toggleClass('open');
+    $menu.toggleClass('open');
     const isOpen = $(this).hasClass('open');
     $(this).attr('aria-expanded', isOpen);
   });
 
-  // Cierra el menú al hacer click en cualquier enlace
   $menu.find('a').on('click', function () {
     $burger.removeClass('open').attr('aria-expanded', false);
-    $menu.slideUp(280).removeClass('open');
+    $menu.removeClass('open');
   });
 }
 
@@ -570,9 +615,9 @@ function jqInitCartDrawer() {
    JQUERY 4 — Tooltips en botones de añadir al carrito
    Muestra un tooltip animado "Añadir al carrito" sobre
    los botones .btn-add-cart usando jQuery fadeIn/fadeOut.
+   Se anexa al body para evitar recorte por overflow:hidden en .product-card.
 ═══════════════════════════════════════════════════════ */
 function jqInitCartTooltips() {
-  // Solo aplica en dispositivos que soportan hover real (no táctil)
   if (!window.matchMedia('(hover: hover)').matches) return;
 
   $(document).on('mouseenter', '.btn-add-cart', function () {
@@ -583,24 +628,40 @@ function jqInitCartTooltips() {
     const $tip = $('<span>')
       .text('Agregar al carrito')
       .css({
-        position: 'absolute',
-        bottom: '110%', left: '50%',
-        transform: 'translateX(-50%)',
+        position: 'fixed',
         background: 'var(--on-surface)',
         color: '#fff',
         fontSize: '0.7rem', fontWeight: '600',
         padding: '0.3rem 0.65rem',
         borderRadius: '0.4rem',
         whiteSpace: 'nowrap',
-        zIndex: 100,
-        pointerEvents: 'none'
+        zIndex: 9999,
+        pointerEvents: 'none',
+        opacity: 0,
+        transition: 'opacity 150ms ease'
       });
 
-    $btn.css('position', 'relative').append($tip.hide().fadeIn(150));
+    $('body').append($tip);
+
+    // Posicionar encima del botón usando getBoundingClientRect para fixed
+    const rect = $btn[0].getBoundingClientRect();
+    const tipWidth = $tip.outerWidth();
+    const tipHeight = $tip.outerHeight();
+    const left = rect.left + (rect.width - tipWidth) / 2;
+    const top = rect.top - tipHeight - 8;
+
+    $tip.css({ left: left + 'px', top: top + 'px' });
+
+    // Forzar reflow y animar entrada
+    $tip[0].offsetHeight; // trigger reflow
+    $tip.css('opacity', 1);
 
     $btn.one('mouseleave', function () {
-      $tip.fadeOut(150, function () { $tip.remove(); });
-      $btn.data('tooltip-active', false);
+      $tip.css('opacity', 0);
+      setTimeout(() => {
+        $tip.remove();
+        $btn.data('tooltip-active', false);
+      }, 150);
     });
   });
 }
@@ -610,6 +671,9 @@ function jqInitCartTooltips() {
    Inicializa todos los módulos al cargar el DOM.
 ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
+  // Cargar carrito desde localStorage
+  loadCartFromStorage();
+
   // Módulos vanilla JS
   setActiveNavLink();
   initReveal();
