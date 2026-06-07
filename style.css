@@ -1083,10 +1083,7 @@ table {
   cursor: pointer;
   position: relative;
 }
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-ambient);
-}
+
 .product-card-img { position: relative; overflow: hidden; aspect-ratio: 1; }
 .product-card:nth-child(3n+2) .product-card-img { aspect-ratio: 4/5; }
 .product-card-img img { width: 100%; height: 100%; transition: transform 0.5s ease; }
