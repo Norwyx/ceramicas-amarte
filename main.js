@@ -32,7 +32,7 @@ const PRODUCTS = [
     description: 'Modelado a mano con arcilla local. El contraste entre el exterior rústico y el interior cristalizado es seña de identidad de nuestra artesanía.',
     specs: { 'Dimensiones': '18cm diámetro x 10cm altura', 'Material': 'Arcilla de Terracota Natural', 'Barniz': 'Interior cristalino, Exterior natural', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '5.0', reviews: 34,
-    images: ['assets/bowl-madre-tierra-1.png','assets/bowl-madre-tierra-2.png','assets/bowl-madre-tierra-3.png']
+    images: ['assets/bowl-madre-tierra-1.png','assets/bowl-madre-tierra-3.png','assets/bowl-madre-tierra-2.png']
   },
   {
     id: 3,
@@ -54,9 +54,9 @@ const PRODUCTS = [
     category: 'platos', badge: null,
     image: 'assets/set-tradicion-1.png',
     description: 'El ritual del café en una pieza de arte. Dos tazas y platillos con motivos florales minimalistas.',
-    specs: { 'Dimensiones': 'Taza 7cm Ø x 6cm / Platillo 14cm Ø', 'Material': 'Porcelana artesanal', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Lavar a mano únicamente' },
+    specs: { 'Dimensiones': 'Taza 7cm diámetro x 6cm / Platillo 14cm', 'Material': 'Porcelana artesanal', 'Barniz': 'Sin Plomo, Cristalino', 'Cuidado': 'Lavar a mano únicamente' },
     chips: ['Hecho a mano', 'Listo para envío'], rating: '4.7', reviews: 27,
-    images: ['https://picsum.photos/seed/set-espresso/600/600','https://picsum.photos/seed/set-espresso-2/600/600','https://picsum.photos/seed/set-espresso-3/600/600']
+    images: ['assets/set-tradicion-1.png','assets/set-tradicion-2.png','assets/set-tradicion-3.png']
   },
   {
     id: 5,
