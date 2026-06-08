@@ -234,7 +234,7 @@ table {
 .nav-hamburger span {
   display: block;
   height: 2px;
-  background: var(--on-surface);
+  background: #1c1c19; /* var(--on-surface) explicit for Safari */
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -296,6 +296,7 @@ table {
   cursor: pointer;
   transition: background 0.2s;
   background: transparent;
+  color: #1c1c19; /* var(--on-surface) explicit for Safari SVG stroke */
 }
 
 #cart-btn:hover { background: var(--outline-ghost); }
