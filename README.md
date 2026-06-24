@@ -1,42 +1,42 @@
-# 🏺 cerámicas amarte
+# 🏺 Cerámicas Amarte
 
-**Artesanías pintadas a mano de El Carmen de Viboral, Antioquia.**
+**Hand-painted ceramics from El Carmen de Viboral, Antioquia.**
 
-Sitio web estático para un taller de cerámica artesanal. Proyecto universitario desarrollado para un cliente real, con catálogo, carrito y checkout por WhatsApp.
+Static website for an artisan ceramics workshop. University project built for a real client, featuring a product catalog, shopping cart, and WhatsApp checkout.
 
-## El sitio
+## Pages
 
-Cuatro páginas estáticas (HTML + CSS + JS vanilla). Sin build tools ni dependencias server-side.
+Four static pages (HTML + CSS + vanilla JS). No build tools or server-side dependencies.
 
-| Página | Descripción |
-|--------|-------------|
-| [`index.html`](index.html) | Portada: hero, sobre nosotros, colecciones, comunidad |
-| [`tienda.html`](tienda.html) | Catálogo con filtros y ordenamiento |
-| [`producto.html`](producto.html) | Detalle dinámico — lee `?id=` de la URL |
-| [`contacto.html`](contacto.html) | Formulario de contacto, mapa, horarios |
+| Page | Description |
+|------|-------------|
+| [`index.html`](index.html) | Home: hero, about, collections, community |
+| [`tienda.html`](tienda.html) | Catalog with filtering and sorting |
+| [`producto.html`](producto.html) | Dynamic product detail — reads `?id=` from URL |
+| [`contacto.html`](contacto.html) | Contact form, map, hours |
 
-### Abrir localmente
+### Open locally
 
 ```bash
 open index.html
 ```
 
-No hace falta servidor, bundler ni `npm install`.
+No server, bundler, or `npm install` required.
 
 ## Stack
 
-- **HTML5** semántico · **CSS3** (variables, glassmorphism, grid)
-- **JavaScript** vanilla (ES6+) · **jQuery 3.7.1** (animaciones)
+- **HTML5** semantic · **CSS3** (variables, glassmorphism, grid)
+- **JavaScript** vanilla (ES6+) · **jQuery 3.7.1** (animations)
 - **Google Fonts:** Newsreader + Manrope
 
-## Carrito
+## Cart
 
-`localStorage`. El checkout abre WhatsApp con el detalle del pedido.
+`localStorage`-based. Checkout opens WhatsApp with the order summary.
 
-## Licencia
+## License
 
-Propietaria — todos los derechos reservados. Ver [`LICENSE`](LICENSE).
+Proprietary — all rights reserved. See [`LICENSE`](LICENSE).
 
 ---
 
-*Proyecto universitario — sitio para emprendimiento de cerámica artesanal.*
+*University project — website for a handmade ceramics business.*
