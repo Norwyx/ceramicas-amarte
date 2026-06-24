@@ -370,6 +370,9 @@ function renderCatalog(filter) {
     ? PRODUCTS
     : PRODUCTS.filter(p => p.category === filter);
 
+  const countEl = document.querySelector('.load-more-count');
+  if (countEl) countEl.textContent = `Mostrando ${list.length} pieza${list.length !== 1 ? 's' : ''} artesanal${list.length !== 1 ? 'es' : ''}`;
+
   grid.innerHTML = list.map((p, i) => `
     <article class="product-card reveal" style="transition-delay:${(i % 6) * 0.07}s">
       <div class="product-card-img" onclick="window.location.href='producto.html?id=${p.id}'">
@@ -418,6 +421,18 @@ function initProductDetail() {
   if (bcName) bcName.textContent = p.name;
   document.title = `${p.name} — Cerámicas Amarte`;
 
+  // Meta tags dinámicos para SEO
+  const desc = `${p.name} — ${p.description} Hecho a mano en El Carmen de Viboral, Antioquia.`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', desc);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${p.name} — Cerámicas Amarte`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', desc);
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', `https://ceramicasamarte.com/${p.images[0]}`);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', `https://ceramicasamarte.com/producto.html?id=${p.id}`);
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', `${p.name} — Cerámicas Amarte`);
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', desc);
+  document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', `https://ceramicasamarte.com/${p.images[0]}`);
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://ceramicasamarte.com/producto.html?id=${p.id}`);
+
   // Contenido principal
   document.getElementById('pd-badge').innerHTML  = badgeHTML('hecho', 'Hecho a Mano');
   document.getElementById('pd-rating').textContent = `★ ${p.rating} (${p.reviews} Reviews)`;
@@ -462,6 +477,29 @@ function initProductDetail() {
   // Tabla de especificaciones
   document.getElementById('pd-specs').innerHTML = Object.entries(p.specs)
     .map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+
+  // JSON-LD Product schema dinámico
+  const existingProductJsonLd = document.getElementById('product-jsonld');
+  if (existingProductJsonLd) existingProductJsonLd.remove();
+  const productJsonLd = document.createElement('script');
+  productJsonLd.id = 'product-jsonld';
+  productJsonLd.type = 'application/ld+json';
+  productJsonLd.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    'name': p.name,
+    'description': p.description,
+    'image': p.images.map(src => `https://ceramicasamarte.com/${src}`),
+    'category': p.category,
+    'offers': {
+      '@type': 'Offer',
+      'price': p.price,
+      'priceCurrency': 'COP',
+      'availability': 'https://schema.org/InStock',
+      'url': `https://ceramicasamarte.com/producto.html?id=${p.id}`
+    }
+  });
+  document.head.appendChild(productJsonLd);
 }
 
 /* ══════════════════════════════════════════════
@@ -500,7 +538,10 @@ function setActiveNavLink() {
   const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.navbar-links a, .nav-mobile a').forEach(a => {
     const href = a.getAttribute('href');
-    a.classList.toggle('active', href === page || (page === '' && href === 'index.html'));
+    const isActive = href === page || (page === '' && href === 'index.html');
+    a.classList.toggle('active', isActive);
+    a.removeAttribute('aria-current');
+    if (isActive) a.setAttribute('aria-current', 'page');
   });
 }
 
@@ -578,7 +619,8 @@ function jqInitCartDrawer() {
   function openCart() {
     $drawer.addClass('open');
     $overlay.addClass('visible');
-    $('body').css('overflow', 'hidden'); // evita scroll de fondo
+    $('body').css('overflow', 'hidden');
+    setTimeout(() => $('#cart-close').trigger('focus'), 100);
   }
 
   // Función auxiliar para cerrar el carrito
@@ -586,6 +628,7 @@ function jqInitCartDrawer() {
     $drawer.removeClass('open');
     $overlay.removeClass('visible');
     $('body').css('overflow', '');
+    setTimeout(() => $('#cart-btn').trigger('focus'), 100);
   }
 
   // Abre el drawer al hacer click en el ícono del carrito
@@ -686,8 +729,12 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCatalog('all');
     document.querySelectorAll('.filter-tab').forEach(tab => {
       tab.addEventListener('click', function () {
-        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.filter-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
         this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
         renderCatalog(this.dataset.filter);
       });
     });
